@@ -1,0 +1,7 @@
+{
+  "name": "gradletest",
+  "version": "1.0.0",
+  "dependencies": {
+    "fabric-contract-api": "^2.2.1"
+  }
+}

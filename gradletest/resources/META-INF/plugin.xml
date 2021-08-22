@@ -1,0 +1,40 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Code</name>
+  <version>1.0</version>
+  <vendor email="13889384135@163.com" url="http://www.peggy.com">peggy</vendor>
+
+  <description>a simple test a simple test a simple test</description>
+
+  <change-notes>a simple test a simple test a simple test</change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- plugin id which my plugin depends on -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>JavaScript</depends>
+  <depends>NodeJS</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <completion.contributor language="JavaScript" implementationClass="main.java.com.completer.GPTCompletionContributor"/>
+    <toolWindow id="Chaincode Mock Call" secondary="true" anchor="right"
+                factoryClass="main.java.com.mocker.MockerToolWindowFactory"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="PluginDemo.Test" class="TestAction" text="TestAction" description="A test for action button.">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+    <action id="ChaincodePlugin.Generator" class="main.java.com.generator.Generator" text="Generator"
+            description="An action for generating initial chaincode.">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
